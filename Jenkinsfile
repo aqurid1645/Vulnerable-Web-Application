@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-                git branch:'master', url: 'https://github.com/OWASP/Vulnerable-Web-Application.git'
+                git branch:'main', url: 'https://github.com/aqurid1645/ICT2216-SSD-Group-16.git'
             }
         }
 
@@ -12,7 +12,7 @@ pipeline {
                 script {
                 def scannerHome = tool 'SonarQube';
                     withSonarQubeEnv('SonarQube') {
-                    sh "/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube/bin/sonar-scanner -Dsonar.projectKey=OWASP -Dsonar.sources=. -Dsonar.host.url=http://192.168.1.25:9000/ -Dsonar.token=sqp_c3bfe5f6c78cca370718e53e21a5463cea58578b"
+                    sh "/var/jenkins_home/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQube/bin/sonar-scanner -Dsonar.projectKey=OWASP -Dsonar.sources=. -Dsonar.host.url=http://192.168.1.25:9000/ -Dsonar.token=sqp_c5e6dad39519d0f5a964cca6ff47d57606db72a6"
                     }
                 }
             }
